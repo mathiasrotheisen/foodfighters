@@ -46,6 +46,11 @@ export default class HomeScreen extends React.Component {
     }
   };
 
+  handleSelectUser = user => {
+    // Vi navigerer til UserProfile skærmen og sender den modtagne user med som argument
+    this.props.navigation.navigate('ProfileScreen', { user });
+  };
+
   render() {
     const { isLoading, users, error } = this.state;
     const firstUser = users ? users[0] : null;
