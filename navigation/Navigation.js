@@ -1,17 +1,16 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 
-
 import Constants from 'expo-constants';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 
 // You can import from local files
-import HomeScreen from './components/HomeScreen';
-import SecondScreen from './components/SecondScreen';
-import UserProfileScreens from './components/UserProfileScreens';
-import { createStackNavigator } from 'react-navigation-stack';
-import MoreScreen from './components/MoreScreen';
+import HomeScreen from '../components/HomeScreen';
+import SecondScreen from '../components/SecondScreen';
+import UserProfileScreens from '../components/UserProfileScreens';
+import MoreScreen from '../components/MoreScreen';
 
 //import { Card } from 'react-native-paper';
 
@@ -35,25 +34,25 @@ function getTabBarIcon(routeName, color) {
       return (
         <Image 
           style ={[styles.tabIcon, {tintColor: color }]}
-          source={require('./assets/list.png')}
+          source={require('../assets/list.png')}
         />
       );
     case 'Map':
       return (
         <Image
           style ={[styles.tabIcon, {tintColor: color }]}
-          source={require('./assets/map.png')}
+          source={require('../assets/map.png')}
         />
       );
-    default:
-      return null;
     case 'More':
         return(
           <Image
             style ={[styles.tabIcon, {tintColor: color }]}
-            source={require('./assets/more.png')}
+            source={require('../assets/more.png')}
           />
         );
+    default:
+        return null;
   }
 }
 
@@ -79,5 +78,3 @@ const tabNavigator = createBottomTabNavigator(
 );
 
 export default createAppContainer(tabNavigator);
-
-
