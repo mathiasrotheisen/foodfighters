@@ -16,7 +16,7 @@ const tabNavigator = createBottomTabNavigator(
     Home: HomeScreen,
     Extra: SecondScreen,
   },
-  { tabBarOptions: { labelStyle: {fontSize: 24 } } }
+  { tabBarOptions: { labelStyle: { fontSize: 24 } } }
 );
 
 export default createAppContainer(tabNavigator);
