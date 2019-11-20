@@ -17,12 +17,10 @@ const styles = StyleSheet.create({
     container: {
       alignItems: 'center',
       justifyContent: 'center',
-      padding: 24,
-      backgroundColor: 'red',
+      padding: 100,
     },
     paragraph: {
       margin: 24,
-      marginTop: 0,
       fontSize: 14,
       fontWeight: 'bold',
       textAlign: 'center',

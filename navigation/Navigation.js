@@ -8,8 +8,9 @@ import { createStackNavigator } from 'react-navigation-stack';
 
 // You can import from local files
 import HomeScreen from '../components/HomeScreen';
-import SecondScreen from '../components/SecondScreen';
+import MapScreen from '../components/MapScreen';
 import UserProfileScreens from '../components/UserProfileScreens';
+import AddScreen from '../components/AddScreen';
 import MoreScreen from '../components/MoreScreen';
 
 //import { Card } from 'react-native-paper';
@@ -44,6 +45,13 @@ function getTabBarIcon(routeName, color) {
           source={require('../assets/map.png')}
         />
       );
+    case 'Add':
+      return (
+        <Image
+          style ={[styles.tabIcon, {tintColor: color }]}
+          source={require('../assets/camera.png')}
+        />
+      );
     case 'More':
         return(
           <Image
@@ -59,7 +67,8 @@ function getTabBarIcon(routeName, color) {
 const tabNavigator = createBottomTabNavigator(
   {
     Home: stackNavigator,
-    Map: SecondScreen,
+    Map: MapScreen,
+    Add: AddScreen,
     More: MoreScreen,
   },
 
