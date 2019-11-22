@@ -52,6 +52,9 @@ export default class MoreScreen extends React.Component {
       if (!this.cameraRef.current) {
         return;
       }
+      // Vi navigerer til AddScreenTwo skærmen
+      this.props.navigation.navigate('AddScreenTwo');
+
       const result = await this.cameraRef.current.takePictureAsync();
       console.log({ result });
       this.setState({ lastPhoto: result.uri });
@@ -67,7 +70,7 @@ export default class MoreScreen extends React.Component {
         console.error(error);
       }
     };
-  
+
     render() {
       const { hasCameraPermission, type } = this.state;
       // Vi ingenting så længe vi venter på input fra bruger
@@ -83,6 +86,7 @@ export default class MoreScreen extends React.Component {
           </View>
         );
       }
+
       // Vis kamera preview og knapper. Vis en "Front" eller "Back" knap afhængig af state
       return (
         <View>

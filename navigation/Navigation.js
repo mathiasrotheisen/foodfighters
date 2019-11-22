@@ -11,6 +11,7 @@ import HomeScreen from '../components/HomeScreen';
 import MapScreen from '../components/MapScreen';
 import UserProfileScreens from '../components/UserProfileScreens';
 import AddScreen from '../components/AddScreen';
+import AddScreenTwo from '../components/AddScreenTwo';
 import MoreScreen from '../components/MoreScreen';
 
 //import { Card } from 'react-native-paper';
@@ -22,12 +23,12 @@ const stackNavigator = createStackNavigator(
   }
 );
 
-const styles = StyleSheet.create({
-  tabIcon: {
-    width: 32,
-    height: 32,
-  },
-});
+const addStackNavigator = createStackNavigator(
+  {
+    AddScreen : { screen : AddScreen },
+    AddScreenTwo : { screen : AddScreenTwo },
+  }
+);
 
 function getTabBarIcon(routeName, color) {
   switch (routeName) {
@@ -68,7 +69,7 @@ const tabNavigator = createBottomTabNavigator(
   {
     Home: stackNavigator,
     Map: MapScreen,
-    Add: AddScreen,
+    Add: addStackNavigator,
     More: MoreScreen,
   },
 
@@ -87,3 +88,10 @@ const tabNavigator = createBottomTabNavigator(
 );
 
 export default createAppContainer(tabNavigator);
+
+const styles = StyleSheet.create({
+  tabIcon: {
+    width: 32,
+    height: 32,
+  },
+});
