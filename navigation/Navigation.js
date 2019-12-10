@@ -13,6 +13,9 @@ import UserProfileScreens from '../components/UserProfileScreens';
 import AddScreen from '../components/AddScreen';
 import AddScreenTwo from '../components/AddScreenTwo';
 import MoreScreen from '../components/MoreScreen';
+import MoreProfileScreen from '../components/MoreProfileScreen';
+import MoreOrdersScreen from '../components/MoreOrdersScreen';
+
 
 //import { Card } from 'react-native-paper';
 
@@ -27,6 +30,14 @@ const addStackNavigator = createStackNavigator(
   {
     AddScreen : { screen : AddScreen },
     AddScreenTwo : { screen : AddScreenTwo },
+  }
+);
+
+const moreStackNavigator = createStackNavigator(
+  {
+    MoreScreen : { screen : MoreScreen },
+    MoreProfileScreen: { screen: MoreProfileScreen},
+    MoreOrdersScreen: { screen: MoreOrdersScreen},
   }
 );
 
@@ -70,9 +81,8 @@ const tabNavigator = createBottomTabNavigator(
     Home: stackNavigator,
     Map: MapScreen,
     Add: addStackNavigator,
-    More: MoreScreen,
+    More: moreStackNavigator,
   },
-
   {
     defaultNavigationOptions: ({ navigation }) => {
       
@@ -86,6 +96,8 @@ const tabNavigator = createBottomTabNavigator(
   }
   //{ tabBarOptions: { labelStyle: { fontSize: 24 } } }
 );
+
+
 
 export default createAppContainer(tabNavigator);
 

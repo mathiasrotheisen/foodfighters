@@ -97,7 +97,7 @@ export default class MoreScreen extends React.Component {
             {type === Camera.Constants.Type.front && (
               <Button title="Back camera" onPress={this.useBackCamera} />
             )}
-            <Button title="Take photo" onPress={this.handleTakePhoto} />
+            <Button style={styles.takePhoto} title="Take photo" onPress={this.handleTakePhoto} />
           </Camera>
         </View>
       );

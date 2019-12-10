@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, TextInput, TouchableOpacity, Button } from 'react-native';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
 
 export default class AddScreenTwo extends React.Component {
     state = {
@@ -19,7 +20,12 @@ export default class AddScreenTwo extends React.Component {
      handleTown = (text) => {
         this.setState({ town: text })
      }
-    
+     
+     handleAddPhoto = () => {
+         // Vi navigerer til HomeScreen skærmen
+         this.props.navigation.navigate('HomeScreen');
+        };
+
     render() {
     return (
       <View style={styles.container}>
@@ -40,7 +46,7 @@ export default class AddScreenTwo extends React.Component {
 
         <TouchableOpacity
                style = {styles.submitButton}>
-               <Text style = {styles.submitButtonText}> Tilføj </Text>
+               <Button style = {styles.submitButtonText} title="Tilføj" onPress={this.handleAddPhoto} /> 
         </TouchableOpacity>
       </View>
     );
@@ -51,21 +57,20 @@ const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
         justifyContent: 'center',
-        padding: 100,
+        padding: 10,
     },
     input: {
-        margin: 20,
+        margin: 15,
         height: 40,
-        width: '150%',
-        borderWidth: 1
+        width: '80%',
+        borderWidth: 1,
+        textAlign: 'center'
      },
       submitButton: {
-          borderWidth: 1,
-          padding: 10,
           margin: 15,
           height: 40,
    },
    submitButtonText:{
-       color: 'black'
+       color: 'black',
    }
   });
