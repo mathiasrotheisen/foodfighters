@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 
 import Constants from 'expo-constants';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-import { createAppContainer } from 'react-navigation';
+import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
 // You can import from local files
@@ -11,6 +11,8 @@ import HomeScreen from '../components/HomeScreen';
 import SecondScreen from '../components/SecondScreen';
 import UserProfileScreens from '../components/UserProfileScreens';
 import MoreScreen from '../components/MoreScreen';
+import Login from '../components/Login';
+import LoginScreen from '../components/LoginScreen';
 
 //import { Card } from 'react-native-paper';
 
@@ -55,7 +57,6 @@ function getTabBarIcon(routeName, color) {
         return null;
   }
 }
-
 const tabNavigator = createBottomTabNavigator(
   {
     Home: stackNavigator,
@@ -77,4 +78,16 @@ const tabNavigator = createBottomTabNavigator(
   //{ tabBarOptions: { labelStyle: { fontSize: 24 } } }
 );
 
-export default createAppContainer(tabNavigator);
+export default createAppContainer(
+    createSwitchNavigator(
+            {
+                Login: Login,
+                LoginScreen: LoginScreen,
+                HomeScreen: tabNavigator
+            },
+            {
+            initialRouteName: 'LoginScreen',
+            
+        }
+    )
+);
