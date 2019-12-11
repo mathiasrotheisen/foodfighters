@@ -1,40 +1,39 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, TextInput } from 'react-native';
+import { Text, View, StyleSheet, TextInput, TouchableOpacity, Button } from 'react-native';
 
 export default class MoreProfileScreen extends React.Component {
-  state = {
-    picText: '',
-    price: '',
-    town: ''
-}
+  handleAddPhoto = () => {
+    // Vi navigerer til HomeScreen skærmen
+    this.props.navigation.navigate('MoreScreen');
+   };
 
-handlePicText = (text) => {
-  this.setState({ picText: text })
-}
 
 render() {
   return (
     <View style={styles.container}>
       <Text style={styles.header}> Information </Text>
       <TextInput style = {styles.input}
-          placeholder = " Name"
-          onChangeText = {this.handlePicText}
+          placeholder = "Name"
+          defaultValue = "Mathias Rotheisen"
       />
 
       <TextInput style = {styles.input}
-          placeholder = " Password"
-          onChangeText = {this.handlePicText}
+          placeholder = "Password"
+          defaultValue = "******"
       />
 
       <TextInput style = {styles.input}
-          placeholder = " E-mail"
-          onChangeText = {this.handlePicText}
+          placeholder = "E-mail"
+          defaultValue = "mattiboy@live.dk"
       />
 
       <TextInput style = {styles.input}
-          placeholder = " Phonenumber"
-          onChangeText = {this.handlePicText}
+          placeholder = "Phonenumber"
+          defaultValue = "+45 88 88 88 88"
       />
+      <TouchableOpacity style = {styles.submitButton}>
+          <Button title="Save changes" onPress={this.handleAddPhoto} /> 
+      </TouchableOpacity>
     </View>
   );
 }
@@ -42,13 +41,12 @@ render() {
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
-    justifyContent: 'center',
+    //alignItems: 'center',
+    //justifyContent: 'center',
     padding: 10,
 },
   header: {
     fontWeight: 'bold',
-    textAlign: 'left',
   },
   input: {
     margin: 5,
@@ -56,5 +54,9 @@ const styles = StyleSheet.create({
     width: '100%',
     borderWidth: 1,
     textAlign: 'left',
- }
+ },
+ submitButton: {
+     margin: 5,
+     height: 40,
+}
 });

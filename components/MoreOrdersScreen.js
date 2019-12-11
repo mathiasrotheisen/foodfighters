@@ -1,22 +1,48 @@
 import * as React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
+import { List, ListItem, Button, ThemeConsumer } from 'react-native-elements';
+
+
+const list = [
+  {
+    name: 'Homemade ryebread\nOrdered: 7th December 2019',
+    screen: 'MoreOrdersScreenTwo'
+  },
+]
 
 export default class MoreOrdersScreen extends React.Component {
-  render() {
+  goToOtherScreen(screen) {
+    this.props.navigation.navigate(screen);
+ }
+  
+  keyExtractor = (item, index) => index.toString()
+
+  renderItem = ({ item }) => (
+    <TouchableOpacity>
+      <ListItem style = {styles.list}
+        title={item.name}
+        onPress={() => this.goToOtherScreen(item.screen)}
+        chevron
+      />
+    </TouchableOpacity>
+  )
+  
+  render () {
     return (
-      <View style={styles.container}>
-        <Text>
-          OrdersScreen
-        </Text>
-      </View>
-    );
+      <FlatList
+        keyExtractor={this.keyExtractor}
+        data={list}
+        renderItem={this.renderItem}
+      />
+    )
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingTop: 100,
-  }
+  list: {
+    paddingVertical: 10,
+  },
 });
+
+  
+

@@ -6,11 +6,11 @@ import { List, ListItem, Button, ThemeConsumer } from 'react-native-elements';
 const list = [
   {
     name: 'Profile',
-    ScreenName: 'MoreProfileScreen'
+    screen: 'MoreProfileScreen'
   },
   {
     name: 'Orders',
-    ScreenName: 'MoreOrdersScreen'
+    screen: 'MoreOrdersScreen'
   },
   {
     name: 'My adds'
@@ -24,8 +24,8 @@ const list = [
 ]
 
 export default class MoreScreen extends React.Component {
-  goToOtherScreen(ScreenName) {
-    this.props.navigation.navigate(ScreenName);
+  goToOtherScreen(screen) {
+    this.props.navigation.navigate(screen);
  }
   
   keyExtractor = (item, index) => index.toString()
@@ -34,7 +34,7 @@ export default class MoreScreen extends React.Component {
     <TouchableOpacity>
       <ListItem
         title={item.name}
-        onPress={() => this.goToOtherScreen(item.ScreenName)}
+        onPress={() => this.goToOtherScreen(item.screen)}
         bottomDivider
         // The arrow at the right
         chevron

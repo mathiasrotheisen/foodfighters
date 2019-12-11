@@ -15,6 +15,7 @@ import AddScreenTwo from '../components/AddScreenTwo';
 import MoreScreen from '../components/MoreScreen';
 import MoreProfileScreen from '../components/MoreProfileScreen';
 import MoreOrdersScreen from '../components/MoreOrdersScreen';
+import MoreOrdersScreenTwo from '../components/MoreOrdersScreenTwo';
 
 
 //import { Card } from 'react-native-paper';
@@ -38,6 +39,7 @@ const moreStackNavigator = createStackNavigator(
     MoreScreen : { screen : MoreScreen },
     MoreProfileScreen: { screen: MoreProfileScreen},
     MoreOrdersScreen: { screen: MoreOrdersScreen},
+    MoreOrdersScreenTwo: { screen: MoreOrdersScreenTwo},
   }
 );
 

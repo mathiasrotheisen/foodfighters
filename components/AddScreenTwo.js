@@ -3,11 +3,13 @@ import { Text, View, StyleSheet, TextInput, TouchableOpacity, Button } from 'rea
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 
 export default class AddScreenTwo extends React.Component {
+    /*
     state = {
         picText: '',
         price: '',
         town: ''
     }
+    */
 
     handlePicText = (text) => {
         this.setState({ picText: text })
@@ -30,23 +32,22 @@ export default class AddScreenTwo extends React.Component {
     return (
       <View style={styles.container}>
         <TextInput style = {styles.input}
-            placeholder = " Billedetekst"
+            placeholder = "Information"
             onChangeText = {this.handlePicText}
         />
 
         <TextInput style = {styles.input}
-            placeholder = " Pris"
-            onChangeText = {this.handlePicText}
+            placeholder = "Price"
+            onChangeText = {this.handlePrice}
         />
 
         <TextInput style = {styles.input}
-            placeholder = " By"
-            onChangeText = {this.handlePicText}
+            placeholder = "City"
+            onChangeText = {this.handleTown}
         />
 
-        <TouchableOpacity
-               style = {styles.submitButton}>
-               <Button style = {styles.submitButtonText} title="Tilføj" onPress={this.handleAddPhoto} /> 
+        <TouchableOpacity style = {styles.submitButton}>
+            <Button title="Tilføj" onPress={this.handleAddPhoto} /> 
         </TouchableOpacity>
       </View>
     );
@@ -60,17 +61,14 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     input: {
-        margin: 15,
+        margin: 5,
         height: 40,
-        width: '80%',
+        width: '100%',
         borderWidth: 1,
-        textAlign: 'center'
+        textAlign: 'left'
      },
       submitButton: {
-          margin: 15,
+          margin: 5,
           height: 40,
-   },
-   submitButtonText:{
-       color: 'black',
    }
   });
