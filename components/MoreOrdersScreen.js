@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
-import { List, ListItem, Button, ThemeConsumer } from 'react-native-elements';
+import { List, ListItem, ThemeConsumer } from 'react-native-elements';
 
 
 const list = [
   {
     name: 'Homemade ryebread\nOrdered: 7th December 2019',
-    screen: 'MoreOrdersScreenTwo'
+    screen: 'MoreOrdersOneScreen'
   },
 ]
 
@@ -22,6 +22,7 @@ export default class MoreOrdersScreen extends React.Component {
       <ListItem style = {styles.list}
         title={item.name}
         onPress={() => this.goToOtherScreen(item.screen)}
+        bottomDivider
         chevron
       />
     </TouchableOpacity>
@@ -40,9 +41,6 @@ export default class MoreOrdersScreen extends React.Component {
 
 const styles = StyleSheet.create({
   list: {
-    paddingVertical: 10,
+    
   },
 });
-
-  
-

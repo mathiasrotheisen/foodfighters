@@ -8,14 +8,19 @@ import { createStackNavigator } from 'react-navigation-stack';
 
 // You can import from local files
 import HomeScreen from '../components/HomeScreen';
-import MapScreen from '../components/MapScreen';
 import UserProfileScreens from '../components/UserProfileScreens';
+import MapScreen from '../components/MapScreen';
 import AddScreen from '../components/AddScreen';
 import AddScreenTwo from '../components/AddScreenTwo';
 import MoreScreen from '../components/MoreScreen';
 import MoreProfileScreen from '../components/MoreProfileScreen';
 import MoreOrdersScreen from '../components/MoreOrdersScreen';
-import MoreOrdersScreenTwo from '../components/MoreOrdersScreenTwo';
+import MoreOrdersOneScreen from '../components/MoreOrdersOneScreen';
+import MoreAddsScreen from '../components/MoreAddsScreen';
+import MoreAddsOneScreen from '../components/MoreAddsOneScreen';
+import MoreAddsTwoScreen from '../components/MoreAddsTwoScreen';
+import MoreAddsThreeScreen from '../components/MoreAddsThreeScreen';
+import MoreContactScreen from '../components/MoreContactScreen';
 
 
 //import { Card } from 'react-native-paper';
@@ -39,7 +44,12 @@ const moreStackNavigator = createStackNavigator(
     MoreScreen : { screen : MoreScreen },
     MoreProfileScreen: { screen: MoreProfileScreen},
     MoreOrdersScreen: { screen: MoreOrdersScreen},
-    MoreOrdersScreenTwo: { screen: MoreOrdersScreenTwo},
+    MoreOrdersOneScreen: { screen: MoreOrdersOneScreen},
+    MoreAddsScreen: { screen: MoreAddsScreen },
+    MoreAddsOneScreen: { screen: MoreAddsOneScreen },
+    MoreAddsTwoScreen: { screen: MoreAddsTwoScreen },
+    MoreAddsThreeScreen: { screen: MoreAddsThreeScreen },
+    MoreContactScreen: { screen: MoreContactScreen },
   }
 );
 

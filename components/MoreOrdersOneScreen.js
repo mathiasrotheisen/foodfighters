@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, Image } from 'react-native';
 
-export default class MoreOrdersScreenTwo extends React.Component {
+export default class MoreOrdersOneScreen extends React.Component {
     render() {
       return (
         <View style = {styles.container}>
@@ -14,7 +14,7 @@ export default class MoreOrdersScreenTwo extends React.Component {
             <Text style = {styles.header}>Order Information</Text>
             <Text>Homemade ryebread</Text>
             <Text>Total: 5 kr.</Text>
-            <Text>Morten de Fries Danielsen</Text>
+            <Text>Morten Danielsen</Text>
             <Text>Finsensvej 21, 2000 Frederiksberg</Text>
         </View>
       );

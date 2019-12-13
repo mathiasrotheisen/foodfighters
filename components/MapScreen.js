@@ -62,6 +62,12 @@ export default class MapScreen extends React.Component {
           provider={PROVIDER_GOOGLE}
           style={styles.map}
           showsUserLocation
+          region={{
+            latitude: 55.684082,
+            longitude: 12.528108,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421,
+          }}
           >
           {/* Vi indsætter nogle hardkodede markører på kortet*/}
           <Marker

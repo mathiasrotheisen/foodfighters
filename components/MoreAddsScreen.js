@@ -1,32 +1,24 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
-import { List, ListItem, Button, ThemeConsumer } from 'react-native-elements';
+import { List, ListItem, ThemeConsumer } from 'react-native-elements';
 
 
 const list = [
   {
-    name: 'Profile',
-    screen: 'MoreProfileScreen'
+    name: 'Unopened Skyr\nPublished: 10th December 2019',
+    screen: 'MoreAddsOneScreen'
   },
   {
-    name: 'Orders',
-    screen: 'MoreOrdersScreen'
+    name: 'Unopened paté\nPublished: 5th December 2019',
+    screen: 'MoreAddsTwoScreen'
   },
   {
-    name: 'My adds',
-    screen: 'MoreAddsScreen'
-  },
-  {
-    name: 'Contact us',
-    screen: 'MoreContactScreen'
-  },
-  {
-    name: 'Sign out',
-    screen: 'MoreScreen'
+    name: 'Grapes\nPublished: 17th December 2019',
+    screen: 'MoreAddsThreeScreen'
   },
 ]
 
-export default class MoreScreen extends React.Component {
+export default class MoreAddsScreen extends React.Component {
   goToOtherScreen(screen) {
     this.props.navigation.navigate(screen);
  }
@@ -35,11 +27,10 @@ export default class MoreScreen extends React.Component {
 
   renderItem = ({ item }) => (
     <TouchableOpacity>
-      <ListItem
+      <ListItem style = {styles.list}
         title={item.name}
         onPress={() => this.goToOtherScreen(item.screen)}
         bottomDivider
-        // The arrow at the right
         chevron
       />
     </TouchableOpacity>
@@ -47,7 +38,7 @@ export default class MoreScreen extends React.Component {
   
   render () {
     return (
-      <FlatList style = {styles.list}
+      <FlatList
         keyExtractor={this.keyExtractor}
         data={list}
         renderItem={this.renderItem}
@@ -63,3 +54,4 @@ const styles = StyleSheet.create({
 });
 
   
+
