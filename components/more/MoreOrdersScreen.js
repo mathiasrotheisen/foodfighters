@@ -5,20 +5,13 @@ import { List, ListItem, ThemeConsumer } from 'react-native-elements';
 
 const list = [
   {
-    name: 'Unopened Skyr\nPublished: 10th December 2019',
-    screen: 'MoreAddsOneScreen'
-  },
-  {
-    name: 'Unopened paté\nPublished: 5th December 2019',
-    screen: 'MoreAddsTwoScreen'
-  },
-  {
-    name: 'Grapes\nPublished: 17th December 2019',
-    screen: 'MoreAddsThreeScreen'
+    title: 'Hjemmelavet rugbrød',
+    subtitle: 'Besilt: 7/12/2019',
+    screen: 'Order1Screen'
   },
 ]
 
-export default class MoreAddsScreen extends React.Component {
+export default class MoreOrdersScreen extends React.Component {
   goToOtherScreen(screen) {
     this.props.navigation.navigate(screen);
  }
@@ -28,7 +21,8 @@ export default class MoreAddsScreen extends React.Component {
   renderItem = ({ item }) => (
     <TouchableOpacity>
       <ListItem style = {styles.list}
-        title={item.name}
+        title={item.title}
+        subtitle={item.subtitle}
         onPress={() => this.goToOtherScreen(item.screen)}
         bottomDivider
         chevron
@@ -52,6 +46,3 @@ const styles = StyleSheet.create({
     
   },
 });
-
-  
-

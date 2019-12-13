@@ -5,23 +5,23 @@ import { List, ListItem, Button, ThemeConsumer } from 'react-native-elements';
 
 const list = [
   {
-    name: 'Profile',
+    name: 'Profil',
     screen: 'MoreProfileScreen'
   },
   {
-    name: 'Orders',
+    name: 'Ordre',
     screen: 'MoreOrdersScreen'
   },
   {
-    name: 'My adds',
+    name: 'Mine annoncer',
     screen: 'MoreAddsScreen'
   },
   {
-    name: 'Contact us',
+    name: 'Kontakt os',
     screen: 'MoreContactScreen'
   },
   {
-    name: 'Sign out',
+    name: 'Log ud',
     screen: 'MoreScreen'
   },
 ]

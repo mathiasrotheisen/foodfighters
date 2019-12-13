@@ -1,23 +1,19 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, Image } from 'react-native';
 
-export default class MoreAddsTwoScreen extends React.Component {
+export default class Add1Screen extends React.Component {
     render() {
       return (
         <View style = {styles.container}>
-            
             <View style = {styles.container2}>
-                <Image style = {styles.pic} source={require('../assets/pate.png')}/>
-                <Text style={styles.header}>Product Status</Text>
-                <Text style = {{marginBottom: 4}}>Available</Text>
+                <Image style = {styles.pic} source={require('/Users/Morten/Documents/Inno/react-native-projects/foodfighters/assets/yoghurt.png')}/>
+                <Text style={styles.header}>Produktstatus</Text>
+                <Text>Ledig</Text>
             </View>
-            <Text style = {styles.header}>Product Information</Text>
-            <Text>Unopened paté</Text>
-            <Text>Expires at 30th December 2019</Text>
-            <Text>Total: 5 kr.</Text>
-            <Text>Mathias Rotheisen</Text>
-            <Text>+45 88 88 88 88</Text>
-            <Text>Lygten 2, 2200 København N</Text>
+            <Text style = {styles.header}>Produktinformation</Text>
+            <Text>Yoghurt</Text>
+            <Text>5 kr.</Text>
+            <Text>Bedst før: 30/12/2019</Text>
         </View>
       );
     }
@@ -43,5 +39,6 @@ export default class MoreAddsTwoScreen extends React.Component {
         justifyContent: 'center',
         borderBottomColor: 'black',
         borderBottomWidth: 1,
+        paddingBottom: 4,
     },
   });

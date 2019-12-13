@@ -37,12 +37,12 @@ export default class AddScreenTwo extends React.Component {
         />
 
         <TextInput style = {styles.input}
-            placeholder = "Price"
+            placeholder = "Pris"
             onChangeText = {this.handlePrice}
         />
 
         <TextInput style = {styles.input}
-            placeholder = "City"
+            placeholder = "Bedst før"
             onChangeText = {this.handleTown}
         />
 

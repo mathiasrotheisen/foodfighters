@@ -16,20 +16,21 @@ render() {
           placeholder = "Name"
           defaultValue = "Mathias Rotheisen"
       />
-
       <TextInput style = {styles.input}
           placeholder = "Password"
           defaultValue = "******"
       />
-
       <TextInput style = {styles.input}
           placeholder = "E-mail"
           defaultValue = "mattiboy@live.dk"
       />
-
       <TextInput style = {styles.input}
           placeholder = "Phonenumber"
-          defaultValue = "+45 88 88 88 88"
+          defaultValue = "+45 12 34 56 78"
+      />
+      <TextInput style = {styles.input}
+          placeholder = "Adresse"
+          defaultValue = "2100, København Ø"
       />
       <TouchableOpacity style = {styles.submitButton}>
           <Button title="Save changes" onPress={this.handleAddPhoto} /> 

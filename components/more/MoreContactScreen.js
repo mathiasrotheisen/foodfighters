@@ -19,16 +19,16 @@ export default class MoreContactScreen extends React.Component {
   render() {
     return (
       <ScrollView style={styles.container}>
-        <Text style={styles.header}>How can we help you?</Text>
-        <Text style={styles.text}>Select a category:</Text>
+        <Text style={styles.header}>Hvordan kan vi hjælpe dig?</Text>
+        <Text style={styles.text}>Vælg en kategori:</Text>
         <Picker style={{marginTop: -30}} selectedValue = {this.state.option} onValueChange = {this.selectedOption}>
-               <Picker.Item label = "Bad experience with an order" value = "1"/>
-               <Picker.Item label = "Question about the app" value = "2"/>
-               <Picker.Item label = "Other" value = "3" />
+               <Picker.Item label = "Dårlig oplevelse med en ordre" value = "1"/>
+               <Picker.Item label = "Spørgsmål om appen" value = "2"/>
+               <Picker.Item label = "Andet" value = "3" />
         </Picker>
-        <Text style={styles.text}>Message:</Text>
+        <Text style={styles.text}>Besked:</Text>
         <TextInput style={styles.textbox}
-            placeholder="Type your message here"
+            placeholder="Skriv besked her"
             onChangeText={(text) => this.setState({text})}
             value={this.state.text}
             multiline={true}

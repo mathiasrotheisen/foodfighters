@@ -1,21 +1,21 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, Image } from 'react-native';
 
-export default class MoreOrdersOneScreen extends React.Component {
+export default class Item9Screen extends React.Component {
     render() {
       return (
         <View style = {styles.container}>
-            
-            <View style = {styles.container2}>
-                <Image style = {styles.pic} source={require('../assets/ryebread.png')}/>
-                <Text style={styles.header}>Order Status</Text>
-                <Text style = {{marginBottom: 4}}>Collected</Text>
-            </View>
-            <Text style = {styles.header}>Order Information</Text>
-            <Text>Homemade ryebread</Text>
-            <Text>Total: 5 kr.</Text>
-            <Text>Morten Danielsen</Text>
-            <Text>Finsensvej 21, 2000 Frederiksberg</Text>
+          <View style = {styles.container2}>
+            <Image style = {styles.pic} source={require('/Users/Morten/Documents/Inno/react-native-projects/foodfighters/assets/ketchup.png')}/>
+            <Text style = {styles.header}>Produktinformation</Text>
+            <Text>Ketchup</Text>
+            <Text>5 kr.</Text>
+            <Text>Bedst før: 1/2/2020</Text>
+          </View>
+          <Text style = {styles.header}>Kontaktoplysninger</Text>
+          <Text>Sebastian A.</Text>
+          <Text>+45 12 34 56 78</Text>
+          <Text>1500, København V</Text>
         </View>
       );
     }
@@ -41,5 +41,6 @@ export default class MoreOrdersOneScreen extends React.Component {
         justifyContent: 'center',
         borderBottomColor: 'black',
         borderBottomWidth: 1,
+        paddingBottom: 4,
     },
   });

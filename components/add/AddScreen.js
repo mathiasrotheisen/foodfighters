@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, SafeAreaView, Linking, Platform, IntentLauncherAndroid, Button, Image, CameraRoll } from 'react-native';
 import Constants from 'expo-constants';
+//Jeg tror at 'emphasized item' kommer herfra, og peger tilbage til node_modules
 import { Camera } from 'expo-camera';
 import * as Permissions from 'expo-permissions';
 
 function openSettings() {
   if (Platform.OS == 'ios') {
-    Linking.openURL('app-setteing:');
+    Linking.openURL('app-settings:');
   } else {
     IntentLauncherAndroid.startActivityAsync(
       IntentLauncherAndroid.ACTION_LOCATION_SOURCE_SETTINGS
@@ -82,30 +83,28 @@ export default class MoreScreen extends React.Component {
         return (
           <View>
             <Text>No access to camera.</Text>
-            <Button title="Go to settings" onPress={openSettings} />
+            <Button title="Indstillinger" onPress={openSettings} />
           </View>
         );
       }
 
       // Vis kamera preview og knapper. Vis en "Front" eller "Back" knap afhængig af state
       return (
-        <View>
-          <Camera style={styles.container} type={type} ref={this.cameraRef}>
+          <Camera style={styles.camara} type={type} ref={this.cameraRef}>
             {type === Camera.Constants.Type.back && (
-              <Button title="Front camera" onPress={this.useFrontCamera} />
+              <Button title="Frontkamara" onPress={this.useFrontCamera} />
             )}
             {type === Camera.Constants.Type.front && (
-              <Button title="Back camera" onPress={this.useBackCamera} />
+              <Button title="Bagkamara" onPress={this.useBackCamera} />
             )}
-            <Button style={styles.takePhoto} title="Take photo" onPress={this.handleTakePhoto} />
+            <Button style={styles.takePhoto} title="Tag billede" onPress={this.handleTakePhoto} />
           </Camera>
-        </View>
       );
     }
   }
   
   const styles = StyleSheet.create({
-    container: {
+    camara: {
       //aspectRatio: 0.50,
       height: '100%',
       width: '100%',
