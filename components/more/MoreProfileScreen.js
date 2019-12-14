@@ -16,9 +16,9 @@ render() {
           placeholder = "Name"
           defaultValue = "Mathias Rotheisen"
       />
-      <TextInput style = {styles.input}
+      <TextInput style = {styles.input} secureTextEntry={true}
           placeholder = "Password"
-          defaultValue = "******"
+          defaultValue = "123456"
       />
       <TextInput style = {styles.input}
           placeholder = "E-mail"

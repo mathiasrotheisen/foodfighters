@@ -71,19 +71,54 @@ export default class MapScreen extends React.Component {
           >
           {/* Vi indsætter nogle hardkodede markører på kortet*/}
           <Marker
-            coordinate={{ latitude: 55.676195, longitude: 12.569419 }}
-            title="Rådhuspladsen"
-            description="blablabal"
+            coordinate={{ latitude: 55.707190, longitude: 12.581250 }}
+            title="2. kg gulerødder"
+            description="2100, København Ø"
           />
           <Marker
-            coordinate={{ latitude: 55.673035, longitude: 12.568756 }}
-            title="Tivoli"
-            description="blablabal"
+            coordinate={{ latitude: 55.706190, longitude: 12.582550 }}
+            title="Pakke smør"
+            description="2100, København Ø"
           />
           <Marker
-            coordinate={{ latitude: 55.674082, longitude: 12.598108 }}
-            title="Christiania"
-            description="blablabal"
+            coordinate={{ latitude: 55.707690, longitude: 12.570960 }}
+            title="Et halvt rugbrød fra bageren"
+            description="2100, København Ø"
+          />
+          <Marker
+            coordinate={{ latitude: 55.709770, longitude: 12.551870 }}
+            title="Yoghurt"
+            description="2100, København Ø"
+          />
+          <Marker
+            coordinate={{ latitude: 55.698816, longitude: 12.546033 }}
+            title="En pakke leverpostej"
+            description="2200, København N"
+          />
+          <Marker
+            coordinate={{ latitude: 55.693108, longitude: 12.555985 }}
+            title="Vindruer"
+            description="2200, København N"
+          />
+          <Marker
+            coordinate={{ latitude: 55.676411, longitude: 12.551610 }}
+            title="Stykke entrecote"
+            description="2000, Frederiksberg"
+          />
+          <Marker
+            coordinate={{ latitude: 55.673202, longitude: 12.500143 }}
+            title="Halv pose boller fra Kohberg"
+            description="2000, Frederiksberg"
+          />
+          <Marker
+            coordinate={{ latitude: 55.668988, longitude: 12.549893 }}
+            title="Ketchup"
+            description="1500, København V"
+          />
+          <Marker
+            coordinate={{ latitude: 55.665599, longitude: 12.553925 }}
+            title="6-pakke æg"
+            description="1500, København V"
           />
         </MapView>        
       </SafeAreaView>

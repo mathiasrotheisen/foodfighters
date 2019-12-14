@@ -8,8 +8,8 @@ export default class Item10Screen extends React.Component {
           <View style = {styles.container2}>
             <Image style = {styles.pic} source={require('/Users/Morten/Documents/Inno/react-native-projects/foodfighters/assets/eggs.png')}/>
             <Text style = {styles.header}>Produktinformation</Text>
-            <Text>10-pakke æg</Text>
-            <Text>5 kr.</Text>
+            <Text>6-pakke æg</Text>
+            <Text>2 kr.</Text>
             <Text>Bedst før: 15/1/2020</Text>
           </View>
           <Text style = {styles.header}>Kontaktoplysninger</Text>

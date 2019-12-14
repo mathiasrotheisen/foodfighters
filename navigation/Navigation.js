@@ -49,6 +49,12 @@ const homeStackNavigator = createStackNavigator(
     Item8Screen : { screen: Item8Screen },
     Item9Screen : { screen: Item9Screen },
     Item10Screen : { screen: Item10Screen },
+  },
+);
+
+const mapStackNavigator = createStackNavigator(
+  {
+    MapScreen : { screen : MapScreen },
   }
 );
 
@@ -110,7 +116,7 @@ function getTabBarIcon(routeName, color) {
 const tabNavigator = createBottomTabNavigator(
   {
     Hjem: homeStackNavigator,
-    Kort: MapScreen,
+    Kort: mapStackNavigator,
     Tilføj: addStackNavigator,
     Mere: moreStackNavigator,
   },

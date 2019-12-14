@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, SafeAreaView, Linking, Platform, IntentLauncherAndroid, Button, Image, CameraRoll } from 'react-native';
+import { Text, View, StyleSheet, SafeAreaView, Linking, Platform, IntentLauncherAndroid, Button, Image, CameraRoll, TouchableOpacity } from 'react-native';
 import Constants from 'expo-constants';
 //Jeg tror at 'emphasized item' kommer herfra, og peger tilbage til node_modules
 import { Camera } from 'expo-camera';
 import * as Permissions from 'expo-permissions';
+//import { TouchableOpacity } from 'react-native-gesture-handler';
 
 function openSettings() {
   if (Platform.OS == 'ios') {
@@ -97,16 +98,26 @@ export default class MoreScreen extends React.Component {
             {type === Camera.Constants.Type.front && (
               <Button title="Bagkamara" onPress={this.useBackCamera} />
             )}
-            <Button style={styles.takePhoto} title="Tag billede" onPress={this.handleTakePhoto} />
+            <View style={styles.takePhoto}>
+              <TouchableOpacity onPress={this.handleTakePhoto}>
+                <Image source={require('/Users/Morten/Documents/Inno/react-native-projects/foodfighters/assets/takePhoto.png')}/>
+              </TouchableOpacity>
+            </View>
           </Camera>
       );
     }
   }
-  
+  //<Button title="Tag billede" onPress={this.handleTakePhoto} />
+
   const styles = StyleSheet.create({
     camara: {
-      //aspectRatio: 0.50,
+      //aspectRatio: 1.0,
       height: '100%',
       width: '100%',
+    },
+    takePhoto: {
+      paddingTop: 450,
+      alignItems: 'center',
+      justifyContent: 'center',
     },
   });

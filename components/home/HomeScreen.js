@@ -58,7 +58,7 @@ const list = [
     screen: 'Item9Screen'
   },
   {
-    title: '10-pakke æg',
+    title: '6-pakke æg',
     subtitle: '5 kr.\n1500, København V',
     picture: require('/Users/Morten/Documents/Inno/react-native-projects/foodfighters/assets/eggs.png'),
     screen: 'Item10Screen'

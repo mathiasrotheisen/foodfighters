@@ -8,7 +8,7 @@ export default class Item3Screen extends React.Component {
           <View style = {styles.container2}>
             <Image style = {styles.pic} source={require('/Users/Morten/Documents/Inno/react-native-projects/foodfighters/assets/ryebread2.png')}/>
             <Text style = {styles.header}>Produktinformation</Text>
-            <Text>Et halv rugbrød fra bageren</Text>
+            <Text>Et halvt rugbrød fra bageren</Text>
             <Text>1 kr.</Text>
             <Text>Bedst før: 28/12/2019</Text>
           </View>
