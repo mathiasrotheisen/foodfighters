@@ -22,7 +22,7 @@ const list = [
   },
   {
     name: 'Log ud',
-    screen: 'MoreScreen'
+    screen: 'LoginScreen'
   },
 ]
 

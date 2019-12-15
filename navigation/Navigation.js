@@ -3,11 +3,14 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 
 import Constants from 'expo-constants';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-import { createAppContainer } from 'react-navigation';
+import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
 // You can import from local files
-// HomeScreens
+// Login
+import Login from '../components/login/Login'
+import LoginScreen from '../components/login/LoginScreen'
+// Home
 import HomeScreen from '../components/home/HomeScreen';
 import Item1Screen from '../components/home/items/Item1Screen';
 import Item2Screen from '../components/home/items/Item2Screen';
@@ -19,12 +22,12 @@ import Item7Screen from '../components/home/items/Item7Screen';
 import Item8Screen from '../components/home/items/Item8Screen';
 import Item9Screen from '../components/home/items/Item9Screen';
 import Item10Screen from '../components/home/items/Item10Screen';
-// MapScreens
+// Map
 import MapScreen from '../components/map/MapScreen';
-// AddScreens
+// Add
 import AddScreen from '../components/add/AddScreen';
 import AddScreenTwo from '../components/add/AddScreenTwo';
-// MoreScreens
+// More
 import MoreScreen from '../components/more/MoreScreen';
 import MoreProfileScreen from '../components/more/MoreProfileScreen';
 import MoreOrdersScreen from '../components/more/MoreOrdersScreen';
@@ -134,9 +137,18 @@ const tabNavigator = createBottomTabNavigator(
   //{ tabBarOptions: { labelStyle: { fontSize: 24 } } }
 );
 
-
-
-export default createAppContainer(tabNavigator);
+export default createAppContainer(
+  createSwitchNavigator(
+    {
+      Login: Login,
+      LoginScreen: LoginScreen,
+      HomeScreen: tabNavigator
+    },
+    {
+      initialRouteName: 'LoginScreen',
+    }
+  )
+);
 
 const styles = StyleSheet.create({
   tabIcon: {
