@@ -32,8 +32,8 @@ export default class SignUpForm extends React.Component {
     isCompleted: false,
     errorMessage: null,
   };
-
-// Kaldes når vi starter en operation der skal vise en spinner
+  
+  // Kaldes når vi starter en operation der skal vise en spinner
   startLoading = () => this.setState({ isLoading: true });
   // Kaldes når en operation er færdig
   endLoading = () => this.setState({ isLoading: false });

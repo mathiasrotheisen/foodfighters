@@ -13,19 +13,19 @@ render() {
     <View style={styles.container}>
       <Text style={styles.header}> Information </Text>
       <TextInput style = {styles.input}
-          placeholder = "Name"
+          placeholder = "Navn"
           defaultValue = "Mathias Rotheisen"
-      />
-      <TextInput style = {styles.input} secureTextEntry={true}
-          placeholder = "Password"
-          defaultValue = "123456"
       />
       <TextInput style = {styles.input}
           placeholder = "E-mail"
-          defaultValue = "mattiboy@live.dk"
+          defaultValue = "mathiasrotheisen@gmail.com"
+      />
+      <TextInput style = {styles.input} secureTextEntry={true}
+          placeholder = "Kodeord"
+          defaultValue = "123456"
       />
       <TextInput style = {styles.input}
-          placeholder = "Phonenumber"
+          placeholder = "Telefonnummer"
           defaultValue = "+45 12 34 56 78"
       />
       <TextInput style = {styles.input}
@@ -33,7 +33,7 @@ render() {
           defaultValue = "2100, København Ø"
       />
       <TouchableOpacity style = {styles.submitButton}>
-          <Button title="Save changes" onPress={this.handleAddPhoto} /> 
+          <Button title="Gem ændringer" onPress={this.handleAddPhoto} /> 
       </TouchableOpacity>
     </View>
   );

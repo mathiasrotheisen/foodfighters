@@ -7,6 +7,7 @@ import {
   ActivityIndicator,
   StyleSheet,
   Alert,
+  Image,
 } from 'react-native';
 import firebase from 'firebase';
   
@@ -52,7 +53,7 @@ import firebase from 'firebase';
         return (
           <View>
             <View style={styles.container} >
-                <Text style={styles.header}> Login</Text>
+                <Image source={require('/Users/Morten/Documents/Inno/react-native-projects/foodfighters/assets/logo.png')} />
             </View>
             <TextInput
             placeholder="E-mail"
@@ -67,14 +68,16 @@ import firebase from 'firebase';
             secureTextEntry
             style={styles.inputField}
             />
-            {errorMessage && (
-              <Text style={styles.error}>Error: {errorMessage}</Text>
-            )}
+            <View style={styles.container2}>
+                {errorMessage && (
+                <Text style={styles.error}>{errorMessage}</Text>
+                )}
+            </View>
             {this.renderButton()}
           </View>
         );
       };
-    
+
       renderButton = () => {
         const { isLoading } = this.state;
         if (isLoading) {
@@ -89,20 +92,19 @@ import firebase from 'firebase';
         justifyContent: 'center',
         alignItems: 'center',
         padding: 70,
+        marginBottom: -60
     },
     container2: {
-        //marginTop: 70,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     error: {
-      color: 'red',
+      color: 'black',
     },
     inputField: {
       borderWidth: 1,
       borderRadius: 20,
       margin: 10,
       padding: 10,
-    },
-    header: {
-      fontSize: 40,
     },
   });
