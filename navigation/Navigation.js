@@ -1,7 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Image } from 'react-native';
 
-import Constants from 'expo-constants';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
@@ -36,8 +35,6 @@ import MoreAddsScreen from '../components/more/MoreAddsScreen';
 import Add1Screen from '../components/more/adds/Add1Screen';
 import Add2Screen from '../components/more/adds/Add2Screen';
 import MoreContactScreen from '../components/more/MoreContactScreen';
-
-//import { Card } from 'react-native-paper';
 
 const homeStackNavigator = createStackNavigator(
   {
@@ -83,7 +80,7 @@ const moreStackNavigator = createStackNavigator(
 
 function getTabBarIcon(routeName, color) {
   switch (routeName) {
-    case 'Hjem':
+    case 'Køb':
       return (
         <Image 
           style ={[styles.tabIcon, {tintColor: color }]}
@@ -118,7 +115,7 @@ function getTabBarIcon(routeName, color) {
 
 const tabNavigator = createBottomTabNavigator(
   {
-    Hjem: homeStackNavigator,
+    Køb: homeStackNavigator,
     Kort: mapStackNavigator,
     Tilføj: addStackNavigator,
     Mere: moreStackNavigator,
@@ -134,7 +131,6 @@ const tabNavigator = createBottomTabNavigator(
       };
     },
   }
-  //{ tabBarOptions: { labelStyle: { fontSize: 24 } } }
 );
 
 export default createAppContainer(
