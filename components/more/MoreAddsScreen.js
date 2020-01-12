@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
-import { List, ListItem, ThemeConsumer } from 'react-native-elements';
-
+import { FlatList, TouchableOpacity } from 'react-native';
+import { ListItem } from 'react-native-elements';
 
 const list = [
   {
@@ -25,7 +24,7 @@ export default class MoreAddsScreen extends React.Component {
 
   renderItem = ({ item }) => (
     <TouchableOpacity>
-      <ListItem style = {styles.list}
+      <ListItem
         title={item.title}
         subtitle={item.subtitle}
         onPress={() => this.goToOtherScreen(item.screen)}
@@ -45,12 +44,3 @@ export default class MoreAddsScreen extends React.Component {
     )
   }
 }
-
-const styles = StyleSheet.create({
-  list: {
-    
-  },
-});
-
-  
-

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, SafeAreaView, Button } from 'react-native';
+import { Text, StyleSheet, SafeAreaView } from 'react-native';
 
 // Map imports
 import Constants from 'expo-constants';
@@ -13,12 +13,6 @@ export default class MapScreen extends React.Component {
     hasLocationPermission: null,
     // Nuværende lokation
     currentLocation: null,
-    /* // De markører som brugeren har sat
-    userMarkerCoordinates: [],
-    // Koordinatet på valgte markør
-    selectedCoordinate: null,
-    // Adressen på valgte markør
-    selectedAddress: null, */
   };
 
   getLocationPermission = async () => {
@@ -50,11 +44,6 @@ export default class MapScreen extends React.Component {
   };
 
   render() {
-    /* const {
-      userMarkerCoordinates,
-      selectedCoordinate,
-      selectedAddress,
-    } = this.state; */
     return (
       <SafeAreaView style={styles.container}>
         {this.renderCurrentLocation()}

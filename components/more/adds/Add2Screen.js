@@ -5,9 +5,8 @@ export default class Add2Screen extends React.Component {
     render() {
       return (
         <View style = {styles.container}>
-            
             <View style = {styles.container2}>
-                <Image style = {styles.pic} source={require('/Users/Morten/Documents/Inno/react-native-projects/foodfighters/assets/onions.png')}/>
+                <Image style = {styles.pic} source={require('../../../assets/onions.png')}/>
                 <Text style={styles.header}>Produktstatus</Text>
                 <Text>Bestilt, ikke afhentet</Text>
             </View>

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
-import { List, ListItem, Button, ThemeConsumer } from 'react-native-elements';
+import { FlatList, TouchableOpacity } from 'react-native';
+import { ListItem } from 'react-native-elements';
 
 
 const list = [
@@ -31,7 +31,7 @@ export default class MoreScreen extends React.Component {
     this.props.navigation.navigate(screen);
  }
   
-  keyExtractor = (item, index) => index.toString()
+  keyExtractor = (index) => index.toString()
 
   renderItem = ({ item }) => (
     <TouchableOpacity>
@@ -47,7 +47,7 @@ export default class MoreScreen extends React.Component {
   
   render () {
     return (
-      <FlatList style = {styles.list}
+      <FlatList
         keyExtractor={this.keyExtractor}
         data={list}
         renderItem={this.renderItem}
@@ -55,11 +55,3 @@ export default class MoreScreen extends React.Component {
     )
   }
 }
-
-const styles = StyleSheet.create({
-  list: {
-    
-  },
-});
-
-  

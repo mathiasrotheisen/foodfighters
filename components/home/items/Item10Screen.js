@@ -6,7 +6,7 @@ export default class Item10Screen extends React.Component {
       return (
         <View style = {styles.container}>
           <View style = {styles.container2}>
-            <Image style = {styles.pic} source={require('/Users/Morten/Documents/Inno/react-native-projects/foodfighters/assets/eggs.png')}/>
+            <Image style = {styles.pic} source={require('../../../assets/eggs.png')}/>
             <Text style = {styles.header}>Produktinformation</Text>
             <Text>6-pakke æg</Text>
             <Text>2 kr.</Text>

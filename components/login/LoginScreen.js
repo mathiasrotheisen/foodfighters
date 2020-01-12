@@ -6,7 +6,6 @@ import {
   TextInput,
   ActivityIndicator,
   StyleSheet,
-  Alert,
   Image,
 } from 'react-native';
 import firebase from 'firebase';
@@ -53,7 +52,7 @@ import firebase from 'firebase';
         return (
           <View>
             <View style={styles.container} >
-                <Image source={require('/Users/Morten/Documents/Inno/react-native-projects/foodfighters/assets/logo.png')} />
+                <Image source={require('../../assets/logo.png')} />
             </View>
             <TextInput
             placeholder="E-mail"
@@ -83,7 +82,7 @@ import firebase from 'firebase';
         if (isLoading) {
           return <ActivityIndicator />;
         }
-        return <Button onPress={this.handleSubmit} title="Login" />;
+        return <Button onPress={this.handleSubmit} title="Log ind" />;
       };
     }
 

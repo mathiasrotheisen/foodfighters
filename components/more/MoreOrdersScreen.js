@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
-import { List, ListItem, ThemeConsumer } from 'react-native-elements';
-
+import { FlatList, TouchableOpacity } from 'react-native';
+import { ListItem } from 'react-native-elements';
 
 const list = [
   {
@@ -16,11 +15,11 @@ export default class MoreOrdersScreen extends React.Component {
     this.props.navigation.navigate(screen);
  }
   
-  keyExtractor = (item, index) => index.toString()
+  keyExtractor = (index) => index.toString()
 
   renderItem = ({ item }) => (
     <TouchableOpacity>
-      <ListItem style = {styles.list}
+      <ListItem
         title={item.title}
         subtitle={item.subtitle}
         onPress={() => this.goToOtherScreen(item.screen)}
@@ -40,9 +39,3 @@ export default class MoreOrdersScreen extends React.Component {
     )
   }
 }
-
-const styles = StyleSheet.create({
-  list: {
-    
-  },
-});

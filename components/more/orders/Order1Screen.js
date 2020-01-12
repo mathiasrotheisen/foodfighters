@@ -5,9 +5,8 @@ export default class Order1Screen extends React.Component {
     render() {
       return (
         <View style = {styles.container}>
-            
             <View style = {styles.container2}>
-                <Image style = {styles.pic} source={require('/Users/Morten/Documents/Inno/react-native-projects/foodfighters/assets/ryebread.png')}/>
+                <Image style = {styles.pic} source={require('../../../assets/ryebread.png')}/>
                 <Text style={styles.header}>Ordrestatus</Text>
                 <Text style = {{marginBottom: 4}}>Afhentet</Text>
             </View>

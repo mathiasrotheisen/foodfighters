@@ -1,13 +1,3 @@
-import * as React from 'react';
-import {
-  Text,
-  View,
-  StyleSheet,
-  KeyboardAvoidingView,
-  ScrollView,
-  Button,
-} from 'react-native';
-import Constants from 'expo-constants';
 import Firebase from 'firebase';
 
 var firebaseConfig = {

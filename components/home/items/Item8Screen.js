@@ -6,7 +6,7 @@ export default class Item8Screen extends React.Component {
       return (
         <View style = {styles.container}>
           <View style = {styles.container2}>
-            <Image style = {styles.pic} source={require('/Users/Morten/Documents/Inno/react-native-projects/foodfighters/assets/buns.png')}/>
+            <Image style = {styles.pic} source={require('../../../assets/buns.png')}/>
             <Text style = {styles.header}>Produktinformation</Text>
             <Text>Halv pose boller fra Kohberg</Text>
             <Text>1 kr.</Text>

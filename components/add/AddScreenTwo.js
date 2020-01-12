@@ -1,16 +1,7 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, TextInput, TouchableOpacity, Button } from 'react-native';
-import { createBottomTabNavigator } from 'react-navigation-tabs';
+import { View, StyleSheet, TextInput, TouchableOpacity, Button } from 'react-native';
 
 export default class AddScreenTwo extends React.Component {
-    /*
-    state = {
-        picText: '',
-        price: '',
-        town: ''
-    }
-    */
-
     handlePicText = (text) => {
         this.setState({ picText: text })
      }

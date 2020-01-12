@@ -1,10 +1,7 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, SafeAreaView, Linking, Platform, IntentLauncherAndroid, Button, Image, CameraRoll, TouchableOpacity } from 'react-native';
-import Constants from 'expo-constants';
-//Jeg tror at 'emphasized item' kommer herfra, og peger tilbage til node_modules
+import { Text, View, StyleSheet, Linking, Platform, IntentLauncherAndroid, Button, Image, CameraRoll, TouchableOpacity } from 'react-native';
 import { Camera } from 'expo-camera';
 import * as Permissions from 'expo-permissions';
-//import { TouchableOpacity } from 'react-native-gesture-handler';
 
 function openSettings() {
   if (Platform.OS == 'ios') {
@@ -22,19 +19,16 @@ export default class MoreScreen extends React.Component {
 
     state = {
       hasCameraPermission: null,
-      //hasCameraRollPermission: null,
       type: Camera.Constants.Type.back,
-      //lastPhoto: null,
-      //galleryImages: null,
     };
   
-  // Vi kontrollerer permissions når komponennten starter
+    // Vi kontrollerer permissions når komponennten starter
     componentDidMount() {
       this.updateCameraPermission();
       this.updateCameraRollPermission();
     }
   
-  // Spørg om permission og sæt state til svaret som kommer retur
+    // Spørg om permission og sæt state til svaret som kommer retur
     updateCameraPermission = async () => {
       const { status } = await Permissions.askAsync(Permissions.CAMERA);
       this.setState({ hasCameraPermission: status === 'granted' });
@@ -45,7 +39,7 @@ export default class MoreScreen extends React.Component {
       this.setState({ hasCameraRollPermission: status === 'granted' });
     };
   
-  // Skift kamera-state
+    // Skift kamera-state
     useBackCamera = () => this.setState({ type: Camera.Constants.Type.back });
     useFrontCamera = () => this.setState({ type: Camera.Constants.Type.front });
   
@@ -63,7 +57,7 @@ export default class MoreScreen extends React.Component {
       await this.handleSaveToCameraRoll(result.uri);
     };
   
-  // Gem billedet i galleriet
+    // Gem billedet i galleriet
     handleSaveToCameraRoll = async uri => {
       console.log(1);
       try {
@@ -79,7 +73,7 @@ export default class MoreScreen extends React.Component {
       if (hasCameraPermission === null) {
         return <View />;
       }
-      // Vis en fejlbesked og en knap til settings hvis brugeren ikke har accepteret adgang
+      // Viser en fejlbesked og en knap til settings hvis brugeren ikke har accepteret adgang
       if (hasCameraPermission === false) {
         return (
           <View>
@@ -89,7 +83,7 @@ export default class MoreScreen extends React.Component {
         );
       }
 
-      // Vis kamera preview og knapper. Vis en "Front" eller "Back" knap afhængig af state
+      // Viser kamera preview og knapper. Vis en "Front" eller "Back" knap afhængig af state
       return (
           <Camera style={styles.camara} type={type} ref={this.cameraRef}>
             {type === Camera.Constants.Type.back && (
@@ -100,18 +94,16 @@ export default class MoreScreen extends React.Component {
             )}
             <View style={styles.takePhoto}>
               <TouchableOpacity onPress={this.handleTakePhoto}>
-                <Image source={require('/Users/Morten/Documents/Inno/react-native-projects/foodfighters/assets/takePhoto.png')}/>
+                <Image source={require('../../assets/takePhoto.png')}/>
               </TouchableOpacity>
             </View>
           </Camera>
       );
     }
   }
-  //<Button title="Tag billede" onPress={this.handleTakePhoto} />
 
   const styles = StyleSheet.create({
     camara: {
-      //aspectRatio: 1.0,
       height: '100%',
       width: '100%',
     },

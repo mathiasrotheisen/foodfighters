@@ -6,7 +6,7 @@ export default class Item9Screen extends React.Component {
       return (
         <View style = {styles.container}>
           <View style = {styles.container2}>
-            <Image style = {styles.pic} source={require('/Users/Morten/Documents/Inno/react-native-projects/foodfighters/assets/ketchup.png')}/>
+            <Image style = {styles.pic} source={require('../../../assets/ketchup.png')}/>
             <Text style = {styles.header}>Produktinformation</Text>
             <Text>Ketchup</Text>
             <Text>5 kr.</Text>
